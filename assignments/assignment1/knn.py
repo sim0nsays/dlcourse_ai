@@ -92,9 +92,10 @@ class KNN:
         '''
         num_train = self.train_X.shape[0]
         num_test = X.shape[0]
+        dimension = self.train_X.shape[1]
         # Using float32 to to save memory - the default is float64
         dists = np.zeros((num_test, num_train), np.float32)
-        template = np.zeros((num_test, num_train, X.shape[1]))
+        template = np.zeros((num_test, num_train, dimension))
         dists = (np.abs(template + X.reshape(num_test, 1, X.shape[1]) -
                         self.train_X.reshape((1, num_train, X.shape[1])))).sum(axis=2)
 
@@ -117,7 +118,8 @@ class KNN:
         for i in range(num_test):
             # TODO: Implement choosing best class based on k
             # nearest training samples
-            pass
+            pred[i] = (self.train_y[np.argsort(dists[i])[:self.k]].mean() > 0.5)
+
         return pred
 
     def predict_labels_multiclass(self, dists):
@@ -135,8 +137,18 @@ class KNN:
         num_test = dists.shape[0]
         num_test = dists.shape[0]
         pred = np.zeros(num_test, np.int)
+
+        def count_item(arr, item):
+            return np.sum(arr == item)
+
         for i in range(num_test):
             # TODO: Implement choosing best class based on k
             # nearest training samples
-            pass
+            choose = self.train_y[np.argsort(dists[i])[:self.k]]
+            count = {}
+            for item in np.unique(choose):
+                count[item] = count_item(choose, item)
+            count_sorted = sorted(count.items(), key=lambda x: x[1], reverse=True)
+            pred[i] = count_sorted[0][0]
+
         return pred
