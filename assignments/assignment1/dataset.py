@@ -1,4 +1,6 @@
 import numpy as np
+np.random.seed(42) # makes the random numbers predictable
+
 import scipy.io as io
 import os
 
