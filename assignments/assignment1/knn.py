@@ -93,13 +93,18 @@ class KNN:
         num_train = self.train_X.shape[0]
         num_test = X.shape[0]
         dimension = self.train_X.shape[1]
-        # Using float32 to to save memory - the default is float64
+        # Using float32 to save memory - the default is float64
         dists = np.zeros((num_test, num_train), np.float32)
-        template = np.zeros((num_test, num_train, dimension))
-        dists = (np.abs(template + X.reshape(num_test, 1, X.shape[1]) -
-                        self.train_X.reshape((1, num_train, X.shape[1])))).sum(axis=2)
+        dists = (np.abs(X[:, np.newaxis, :] -
+                        self.train_X[np.newaxis, :, :])).sum(axis=2)
+        # dists = (np.abs(X.reshape(num_test, 1, X.shape[1]) -
+        #                 self.train_X.reshape((1, num_train, X.shape[1])))).sum(axis=2)
+        # template = np.zeros((num_test, num_train, dimension))
+        # dists = (np.abs(template + X.reshape(num_test, 1, X.shape[1]) -
+        #                 self.train_X.reshape((1, num_train, X.shape[1])))).sum(axis=2)
         # dists = np.sqrt(
-        #     - 2 * X.dot(self.train_X.T) + (X**2).sum(axis=1, keepdims=True) + (self.train_X**2).T.sum(axis=0, keepdims=True)
+        #     - 2 * X.dot(self.train_X.T) + (X**2).sum(axis=1, keepdims=True) +
+        #     (self.train_X**2).T.sum(axis=0, keepdims=True)
         # )  # L2
 
         return dists
