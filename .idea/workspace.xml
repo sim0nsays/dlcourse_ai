@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="80225fa3-9d46-4344-b7ad-7f098e1d81f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignments/assignment1/KNN.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/assignment1/KNN.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignments/assignment1/knn.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/assignment1/knn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignments/assignment1/Linear classifier.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/assignment1/Linear classifier.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignments/assignment1/gradient_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/assignment1/gradient_check.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignments/assignment1/linear_classifer.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/assignment1/linear_classifer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignments/assignment1/knn.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="50">
-              <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
+              <caret line="103" selection-start-line="103" selection-end-line="103" />
               <folding>
                 <marker date="1552038033825" expanded="true" signature="3334:3492" ph="..." />
               </folding>
@@ -30,15 +31,50 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assignments/assignment1/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="102">
+                <caret line="6" column="64" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assignments/assignment1/linear_classifer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="45" column="25" lean-forward="true" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assignments/assignment1/gradient_check.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignments/assignment1/metrics.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="394">
-              <caret line="35" column="50" lean-forward="true" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+              <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>idx</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,6 +87,8 @@
         <option value="$PROJECT_DIR$/assignments/assignment1/KNN.ipynb" />
         <option value="$PROJECT_DIR$/assignments/assignment1/metrics.py" />
         <option value="$PROJECT_DIR$/assignments/assignment1/knn.py" />
+        <option value="$PROJECT_DIR$/assignments/assignment1/linear_classifer.py" />
+        <option value="$PROJECT_DIR$/assignments/assignment1/gradient_check.py" />
       </list>
     </option>
   </component>
@@ -167,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551906193993</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="some test with L2">
+      <created>1552038534652</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1552038534652</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -183,12 +228,12 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48908296" visible="true" weight="0.2247191" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48908296" visible="true" weight="0.2247191" />
       <window_info id="Structure" order="1" sideWeight="0.510917" side_tool="true" visible="true" weight="0.2247191" />
       <window_info id="Favorites" order="2" sideWeight="0.5021834" side_tool="true" weight="0.24983476" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329429" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.329429" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -245,7 +290,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="three metods for knn (2 loops, 1 loop, without loop)" />
     <MESSAGE value="1 homework was completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="1 homework was completed" />
+    <MESSAGE value="some test with L2" />
+    <option name="LAST_COMMIT_MESSAGE" value="some test with L2" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/assignments/assignment1/requirements.txt">
@@ -263,16 +309,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/assignment1/KNN_my.ipynb" />
-    <entry file="file://$PROJECT_DIR$/assignments/assignment1/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="102">
-            <caret line="6" column="64" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assignments/assignment1/KNN.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
@@ -283,17 +319,57 @@
     <entry file="file://$PROJECT_DIR$/assignments/assignment1/metrics.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
-          <caret line="35" column="50" lean-forward="true" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/assignment1/knn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
-          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
           <folding>
             <marker date="1552038033825" expanded="true" signature="3334:3492" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/assignment1/dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/assignment1/Linear classifier.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/assignment1/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="102">
+            <caret line="6" column="64" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/assignment1/linear_classifer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="45" column="25" lean-forward="true" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/assignment1/gradient_check.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
