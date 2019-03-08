@@ -98,6 +98,9 @@ class KNN:
         template = np.zeros((num_test, num_train, dimension))
         dists = (np.abs(template + X.reshape(num_test, 1, X.shape[1]) -
                         self.train_X.reshape((1, num_train, X.shape[1])))).sum(axis=2)
+        # dists = np.sqrt(
+        #     - 2 * X.dot(self.train_X.T) + (X**2).sum(axis=1, keepdims=True) + (self.train_X**2).T.sum(axis=0, keepdims=True)
+        # )  # L2
 
         return dists
 
@@ -134,7 +137,6 @@ class KNN:
         pred, np array of int (num_test_samples) - predicted class index 
            for every test sample
         '''
-        num_test = dists.shape[0]
         num_test = dists.shape[0]
         pred = np.zeros(num_test, np.int)
 

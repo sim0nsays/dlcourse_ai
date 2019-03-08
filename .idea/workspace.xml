@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80225fa3-9d46-4344-b7ad-7f098e1d81f8" name="Default Changelist" comment="three metods for knn (2 loops, 1 loop, without loop)">
+    <list default="true" id="80225fa3-9d46-4344-b7ad-7f098e1d81f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignments/assignment1/KNN.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/assignment1/KNN.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignments/assignment1/knn.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/assignment1/knn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignments/assignment1/metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/assignment1/metrics.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,20 +17,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assignments/assignment1/knn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
+            <state relative-caret-position="50">
+              <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
+              <folding>
+                <marker date="1552038033825" expanded="true" signature="3334:3492" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignments/assignment1/metrics.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="35" column="23" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="23" />
+            <state relative-caret-position="394">
+              <caret line="35" column="50" lean-forward="true" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -47,8 +49,8 @@
         <option value="$PROJECT_DIR$/assignments/assignment1/download_data.sh" />
         <option value="$PROJECT_DIR$/assignments/assignment1/README.md" />
         <option value="$PROJECT_DIR$/assignments/assignment1/KNN.ipynb" />
-        <option value="$PROJECT_DIR$/assignments/assignment1/knn.py" />
         <option value="$PROJECT_DIR$/assignments/assignment1/metrics.py" />
+        <option value="$PROJECT_DIR$/assignments/assignment1/knn.py" />
       </list>
     </option>
   </component>
@@ -63,6 +65,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -85,7 +88,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -158,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551785993330</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1 homework was completed">
+      <created>1551906193993</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1551906193993</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -174,12 +183,12 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49126637" visible="true" weight="0.2247191" />
-      <window_info id="Structure" order="1" sideWeight="0.50873363" side_tool="true" visible="true" weight="0.2247191" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48908296" visible="true" weight="0.2247191" />
+      <window_info id="Structure" order="1" sideWeight="0.510917" side_tool="true" visible="true" weight="0.2247191" />
       <window_info id="Favorites" order="2" sideWeight="0.5021834" side_tool="true" weight="0.24983476" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.329429" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329429" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -235,7 +244,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="three metods for knn (2 loops, 1 loop, without loop)" />
-    <option name="LAST_COMMIT_MESSAGE" value="three metods for knn (2 loops, 1 loop, without loop)" />
+    <MESSAGE value="1 homework was completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="1 homework was completed" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/assignments/assignment1/requirements.txt">
@@ -270,17 +280,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/assignment1/knn.py">
+    <entry file="file://$PROJECT_DIR$/assignments/assignment1/metrics.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
+        <state relative-caret-position="394">
+          <caret line="35" column="50" lean-forward="true" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/assignment1/metrics.py">
+    <entry file="file://$PROJECT_DIR$/assignments/assignment1/knn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="35" column="23" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="23" />
+        <state relative-caret-position="50">
+          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
+          <folding>
+            <marker date="1552038033825" expanded="true" signature="3334:3492" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
