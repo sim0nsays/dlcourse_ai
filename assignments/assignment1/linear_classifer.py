@@ -34,7 +34,8 @@ def cross_entropy_loss(probs, target_index):
     '''
     # TODO implement cross-entropy
     # raise Exception("Not implemented!")
-    return - probs[target_index]
+    return - np.log(probs[target_index]).mean()
+
 
 def softmax_with_cross_entropy(predictions, target_index):
     '''
@@ -52,7 +53,17 @@ def softmax_with_cross_entropy(predictions, target_index):
       dprediction, np array same shape as predictions - gradient of predictions by loss value
     '''
     # TODO implement softmax with cross-entropy
-    raise Exception("Not implemented!")
+    # raise Exception("Not implemented!")
+    predictions = predictions.copy()
+    # target_index = target_index.reshape(-)
+    probs = softmax(predictions)
+    loss = cross_entropy_loss(probs, target_index)
+
+    mask = np.zeros_like(predictions)
+    mask[target_index] = 1
+    # pred[np.arange(len(target_index)), target_index] = 1  # TODO
+
+    dprediction = - (mask - softmax(predictions))
 
     return loss, dprediction
 
@@ -158,11 +169,3 @@ class LinearSoftmaxClassifier():
 
         return y_pred
 
-
-
-                
-                                                          
-
-            
-
-                
