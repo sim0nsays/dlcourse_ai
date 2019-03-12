@@ -16,7 +16,9 @@ def softmax(predictions):
     # TODO implement softmax
     # raise Exception("Not implemented!")
     predictions -= np.max(predictions)
-    return np.exp(predictions) / np.sum(np.exp(predictions))
+    res = np.exp(predictions) / np.sum(np.exp(predictions), axis=1, keepdims=True)
+    # res = np.exp(predictions) / np.sum(np.exp(predictions))
+    return res
 
 
 def cross_entropy_loss(probs, target_index):
@@ -34,7 +36,10 @@ def cross_entropy_loss(probs, target_index):
     '''
     # TODO implement cross-entropy
     # raise Exception("Not implemented!")
-    return - np.log(probs[target_index]).mean()
+    res = - np.log(probs[np.arange(len(probs)), target_index])
+    # res = - np.log(probs[target_index])
+
+    return res
 
 
 def softmax_with_cross_entropy(predictions, target_index):
@@ -57,13 +62,14 @@ def softmax_with_cross_entropy(predictions, target_index):
     predictions = predictions.copy()
     # target_index = target_index.reshape(-)
     probs = softmax(predictions)
-    loss = cross_entropy_loss(probs, target_index)
+
+    loss = cross_entropy_loss(probs, target_index).mean()
 
     mask = np.zeros_like(predictions)
-    mask[target_index] = 1
-    # pred[np.arange(len(target_index)), target_index] = 1  # TODO
+    mask[np.arange(len(mask)), target_index] = 1
+    # mask[target_index] = 1
 
-    dprediction = - (mask - softmax(predictions))
+    dprediction = - (mask - softmax(predictions)) / mask.shape[0]
 
     return loss, dprediction
 
@@ -104,8 +110,10 @@ def linear_softmax(X, W, target_index):
     predictions = np.dot(X, W)
 
     # TODO implement prediction and gradient over W
-    raise Exception("Not implemented!")
-    
+    # raise Exception("Not implemented!")
+    loss = softmax_with_cross_entropy(predictions, target_index)[0]
+    dW = softmax_with_cross_entropy(predictions, target_index)[1] * W
+
     return loss, dW
 
 
