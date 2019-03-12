@@ -121,8 +121,9 @@ def linear_softmax(X, W, target_index):
 
 
 class LinearSoftmaxClassifier():
-    def __init__(self):
+    def __init__(self, verbose = False):
         self.W = None
+        self.verbose = verbose
 
     def fit(self, X, y, batch_size=100, learning_rate=1e-7, reg=1e-5,
             epochs=1):
@@ -159,8 +160,8 @@ class LinearSoftmaxClassifier():
             # and regularization!
             # raise Exception("Not implemented!")
 
-            # batch_num = np.random.randint(len(batches_indices))
-            batch_num = 0
+            batch_num = np.random.randint(len(batches_indices))
+            # batch_num = 0
             X_batches = X[batches_indices[batch_num]]
             target_index = y[batches_indices[batch_num]]
             loss, dW = linear_softmax(X_batches, W, target_index)
@@ -171,7 +172,8 @@ class LinearSoftmaxClassifier():
             loss_history.append(loss)
 
             # end
-            # print("Epoch %i, loss: %f" % (epoch, loss))
+            if self.verbose:
+                print("Epoch %i, loss: %f" % (epoch, loss))
 
         self.W = W
         return loss_history
