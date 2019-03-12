@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80225fa3-9d46-4344-b7ad-7f098e1d81f8" name="Default Changelist" comment="loss, grad for without batch">
-      <change beforePath="$PROJECT_DIR$/.idea/dlcourse_ai.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dlcourse_ai.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="80225fa3-9d46-4344-b7ad-7f098e1d81f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignments/assignment1/KNN.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/assignment1/KNN.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignments/assignment1/Linear classifier.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/assignment1/Linear classifier.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignments/assignment1/linear_classifer.py" beforeDir="false" afterPath="$PROJECT_DIR$/assignments/assignment1/linear_classifer.py" afterDir="false" />
     </list>
@@ -35,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assignments/assignment1/linear_classifer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="70" column="52" selection-start-line="70" selection-start-column="52" selection-end-line="70" selection-end-column="52" />
+            <state relative-caret-position="169">
+              <caret line="162" column="25" lean-forward="true" selection-start-line="162" selection-start-column="25" selection-end-line="162" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -223,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1552250707227</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="correct the loss as mean">
+      <created>1552381322317</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1552381322317</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -305,7 +309,8 @@
     <MESSAGE value="cross_entropy_loss" />
     <MESSAGE value="np.newaxis for dists" />
     <MESSAGE value="loss, grad for without batch" />
-    <option name="LAST_COMMIT_MESSAGE" value="loss, grad for without batch" />
+    <MESSAGE value="correct the loss as mean" />
+    <option name="LAST_COMMIT_MESSAGE" value="correct the loss as mean" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/assignments/assignment1/requirements.txt">
@@ -383,8 +388,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/assignment1/linear_classifer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="70" column="52" selection-start-line="70" selection-start-column="52" selection-end-line="70" selection-end-column="52" />
+        <state relative-caret-position="169">
+          <caret line="162" column="25" lean-forward="true" selection-start-line="162" selection-start-column="25" selection-end-line="162" selection-end-column="25" />
         </state>
       </provider>
     </entry>
