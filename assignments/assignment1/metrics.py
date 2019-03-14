@@ -7,7 +7,7 @@ def binary_classification_metrics(prediction, ground_truth):
     ground_truth, np array of bool (num_samples) - true labels
 
     Returns:
-    precision, recall, accuracy, f1 - classification metrics
+    precision, recall, f1, accuracy - classification metrics
     '''
     precision = 0
     recall = 0
@@ -19,7 +19,7 @@ def binary_classification_metrics(prediction, ground_truth):
     # https://en.wikipedia.org/wiki/Precision_and_recall
     # https://en.wikipedia.org/wiki/F1_score
     
-    return accuracy, precision, recall, f1
+    return precision, recall, f1, accuracy
 
 
 def multiclass_accuracy(prediction, ground_truth):

@@ -12,7 +12,7 @@ def load_data_mat(filename, max_samples):
     y, np array of int (num_samples) - labels
     '''
     raw = io.loadmat(filename)
-    X = raw['X']  # Array of [3, 32, 32, n_samples]
+    X = raw['X']  # Array of [32, 32, 3, n_samples]
     y = raw['y']  # Array of [n_samples, 1]
     X = np.moveaxis(X, [3], [0])
     y = y.flatten()
