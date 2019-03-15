@@ -6,13 +6,14 @@ from layers import FullyConnectedLayer, ReLULayer, softmax_with_cross_entropy, l
 class TwoLayerNet:
     """ Neural network with two fully connected layers """
 
-    def __init__(self, n_input, hidden_layer_size, reg):
+    def __init__(self, n_input, n_output, hidden_layer_size, reg):
         """
         Initializes the neural network
 
         Arguments:
         hidden_layer_size, int - number of neurons in the hidden layer
         n_input, int - dimension of the model input
+        n_output, int - number of classes to predict
         reg, float - L2 regularization strength
         """
         self.reg = reg
