@@ -86,7 +86,7 @@ class Trainer:
         loss_history = []
         train_acc_history = []
         val_acc_history = []
-
+        
         for epoch in range(self.num_epochs):
             shuffled_indices = np.arange(num_train)
             np.random.shuffle(shuffled_indices)
@@ -108,7 +108,9 @@ class Trainer:
 
                 batch_losses.append(loss)
 
-            self.learning_rate *= self.learning_rate_decay
+            if np.not_equal(self.learning_rate_decay, 1.0):
+                # TODO: Implement learning rate decay
+                raise Exception("Not implemented!")
 
             ave_loss = np.mean(batch_losses)
 
