@@ -4,7 +4,7 @@ import numpy as np
 import scipy.io as io
 
 
-def load_data_mat(filename, max_samples):
+def load_data_mat(filename, max_samples, seed=42):
     raw = io.loadmat(filename)
     X = raw['X']  # Array of [32, 32, 3, n_samples]
     y = raw['y']  # Array of [n_samples, 1]
@@ -12,7 +12,13 @@ def load_data_mat(filename, max_samples):
     y = y.flatten()
     # Fix up class 0 to be 0
     y[y == 10] = 0
-    return X[:max_samples], y[:max_samples]
+    
+    np.random.seed(seed)
+    samples = np.random.choice(np.arange(X.shape[0]),
+                               max_samples,
+                               replace=False)
+    
+    return X[samples].astype(np.float32), y[samples]
 
 
 def load_svhn(folder, max_train, max_test):

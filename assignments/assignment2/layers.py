@@ -73,6 +73,7 @@ class ReLULayer:
           with respect to input
         """
         # TODO: Implement backward pass
+        # Your final implementation shouldn't have any loops
         raise Exception("Not implemented!")
         return d_result
 
@@ -89,6 +90,7 @@ class FullyConnectedLayer:
 
     def forward(self, X):
         # TODO: Implement forward pass
+        # Your final implementation shouldn't have any loops
         raise Exception("Not implemented!")
 
     def backward(self, d_out):

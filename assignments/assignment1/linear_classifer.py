@@ -14,11 +14,14 @@ def softmax(predictions):
         probability for every class, 0..1
     '''
     # TODO implement softmax
+
     # raise Exception("Not implemented!")
     predictions -= np.max(predictions)
     res = np.exp(predictions) / np.sum(np.exp(predictions), axis=1, keepdims=True)
     # res = np.exp(predictions) / np.sum(np.exp(predictions))
     return res
+    # Your final implementation shouldn't have any loops
+
 
 
 def cross_entropy_loss(probs, target_index):
@@ -60,7 +63,7 @@ def softmax_with_cross_entropy(predictions, target_index):
     # TODO implement softmax with cross-entropy
     # raise Exception("Not implemented!")
     predictions = predictions.copy()
-    # target_index = target_index.reshape(-)
+
     probs = softmax(predictions)
 
     loss = cross_entropy_loss(probs, target_index).mean()
@@ -70,6 +73,7 @@ def softmax_with_cross_entropy(predictions, target_index):
     # mask[target_index] = 1
 
     dprediction = - (mask - softmax(predictions)) / mask.shape[0]
+
 
     return loss, dprediction
 
@@ -91,6 +95,7 @@ def l2_regularization(W, reg_strength):
     # raise Exception("Not implemented!")
     loss = (W*W).sum() * reg_strength
     grad = 2 * W * reg_strength
+
 
     return loss, grad
     
@@ -116,6 +121,7 @@ def linear_softmax(X, W, target_index):
     loss = softmax_with_cross_entropy(predictions, target_index)[0]
     dprediction = softmax_with_cross_entropy(predictions, target_index)[1]
     dW = np.dot(X.T, dprediction)
+
 
     return loss, dW
 
@@ -195,6 +201,7 @@ class LinearSoftmaxClassifier():
         predictions = np.dot(X, self.W)
         probs = softmax(predictions)
         y_pred = np.argmax(probs, axis=1)
+
 
         return y_pred
 
