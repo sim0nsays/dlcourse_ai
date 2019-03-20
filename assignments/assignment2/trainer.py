@@ -123,7 +123,7 @@ class Trainer:
             print("Loss: %f, Train accuracy: %f, val accuracy: %f" %
                   (batch_losses[-1], train_accuracy, val_accuracy))
 
-            loss_history.append(loss)
+            loss_history.append(ave_loss)
             train_acc_history.append(train_accuracy)
             val_acc_history.append(val_accuracy)
 
