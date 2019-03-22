@@ -19,6 +19,7 @@ def check_gradient(f, x, delta=1e-5, tol=1e-4):
     assert x.dtype == np.float
 
     fx, analytic_grad = f(x)
+    analytic_grad = analytic_grad.copy()
 
     assert analytic_grad.shape == x.shape
 
