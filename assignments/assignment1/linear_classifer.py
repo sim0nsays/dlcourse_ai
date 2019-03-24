@@ -17,14 +17,9 @@ def softmax(predictions):
     # TODO implement softmax
     if len(predictions.shape) == 1:
         predictions -= np.max(predictions)
-        return np.exp(predictions) / np.sum(np.exp(predictions))
-    it = np.nditer(predictions, flags=['multi_index'], op_flags=['readwrite'])
-    probs = np.zeros(predictions.shape)
-    while not it.finished:
-        ix = it.multi_index
-        predictions[ix] -= np.max(predictions)
-        probs[ix] = np.exp(predictions[ix]) / np.sum(np.exp(predictions[ix]))
-        it.iternext()
+    else:
+        predictions -= np.max(predictions, 0)
+    probs = np.exp(predictions) / np.sum(np.exp(predictions))
     return probs
     # Your final implementation shouldn't have any loops
     raise Exception("Not implemented!")
@@ -45,13 +40,19 @@ def cross_entropy_loss(probs, target_index):
     # TODO implement cross-entropy
     if len(probs.shape) == 1:
         return -math.log(probs[target_index])
-    it = np.nditer(probs, flags=['multi_index'], op_flags=['readwrite'])
-    loss = 0
-    while not it.finished:
-        ix = it.multi_index
-        loss -= math.log(probs[ix])
-        it.iternext()
-    return loss / len(probs)
+    display("probs")
+    display(probs)
+    display("target_index")
+    display(target_index)
+    loss = np.zeros(probs[0].shape)
+    display("loss")
+    display(loss)
+    for col in range(loss[0].size):
+
+        loss[col] = -math.log(probs[target_index[col][0]][col])
+    display("loss")
+    display(loss)
+    return np.mean(loss)
     # Your final implementation shouldn't have any loops
     raise Exception("Not implemented!")
 
