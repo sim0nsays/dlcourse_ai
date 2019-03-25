@@ -11,14 +11,14 @@ class TwoLayerNet:
         Initializes the neural network
 
         Arguments:
-        hidden_layer_size, int - number of neurons in the hidden layer
         n_input, int - dimension of the model input
         n_output, int - number of classes to predict
+        hidden_layer_size, int - number of neurons in the hidden layer
         reg, float - L2 regularization strength
         """
         self.reg = reg
         # TODO Create necessary layers
-        raise Exception("Not implemented!")
+        raise Exception("Not implemented!)"
 
     def compute_loss_and_gradients(self, X, y):
         """
