@@ -136,7 +136,7 @@ class ConvolutionalLayer:
         # You already know how to backprop through that
         # when you implemented FullyConnectedLayer
         # Just do it the same number of times and accumulate gradients
-        
+
         batch_size, height, width, channels = X.shape
         _, out_height, out_width, out_channels = d_out.shape
 
@@ -144,19 +144,19 @@ class ConvolutionalLayer:
         # Same as forward, setup variables of the right shape that
         # aggregate input gradient and fill them for every location
         # of the output
-        
-        # Try to avoid having any other loops here too        
+
+        # Try to avoid having any other loops here too
         for y in range(out_height):
             for x in range(out_width):
                 # TODO: Implement backward pass for specific location
                 # Aggregate gradients for both the input and
                 # the parameters (W and B)
                 pass
-            
+
         raise Exception("Not implemented!")
-    
+
     def params(self):
-        return { 'W': self.W, 'B': self.B }    
+        return { 'W': self.W, 'B': self.B }
 
 
 class MaxPoolingLayer:
@@ -185,4 +185,25 @@ class MaxPoolingLayer:
         raise Exception("Not implemented!")
 
     def params(self):
+        return {}
+
+
+class Flattener:
+    def __init__(self):
+        self.X_shape = None
+
+    def forward(self, X):
+        batch_size, height, width, channels = X.shape
+
+        # TODO: Implement forward pass
+        # Layer should return array with dimensions
+        # [batch_size, hight*width*channels]
+        raise Exception("Not implemented!")
+
+    def backward(self, d_out):
+        # TODO: Implement backward pass
+        raise Exception("Not implemented!")
+
+    def params(self):
+        # No params!
         return {}
