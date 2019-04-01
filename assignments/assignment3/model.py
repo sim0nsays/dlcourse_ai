@@ -15,18 +15,16 @@ class ConvNet:
     Conv[3x3] -> Relu -> MaxPool[4x4] ->
     Flatten -> FC -> Softmax
     """
-    def __init__(self, n_input, n_output, conv1_size, conv2_size, reg):
+    def __init__(self, n_input_channels, n_output_classes, conv1_channels, conv2_channels):
         """
         Initializes the neural network
 
         Arguments:
-        n_input, int - dimension of the model input
-        n_output, int - number of classes to predict
-        conv1_size, int - number of filters in the 1st conv layer
-        conv2_size, int - number of filters in the 2nd conv layer
-        reg, float - L2 regularization strength
+        n_input_channels, int - number of input channels
+        n_output_classes, int - number of classes to predict
+        conv1_channels, int - number of filters in the 1st conv layer
+        conv2_channels, int - number of filters in the 2nd conv layer
         """
-        self.reg = reg
         # TODO Create necessary layers
         raise Exception("Not implemented!")
 
