@@ -19,8 +19,9 @@ PyTorch CNN
 Это может быть GPU от NVidia на вашем компьютере, тогда рекомендуется установить PyTorch с поддержкой GPU через Conda - https://pytorch.org/get-started/locally/
 
 Если у вас нет GPU, можно воспользоваться [Google Colab](https://colab.research.google.com/), который предоставляет бесплатный доступ к GPU в облаке.
+
 Туториал по настройке Google Colab:
 https://medium.com/deep-learning-turkey/google-colab-free-gpu-tutorial-e113627b9f5d
 (Keras инсталлировать не нужно, наш notebook сам установит PyTorch)
 
-`PyTorch.ipynb` - следуйте инструкциям в ноутбуке.
+`PyTorch_CNN.ipynb` - следуйте инструкциям в ноутбуке.
