@@ -24,7 +24,7 @@ def softmax_with_cross_entropy(preds, target_index):
     including the gradient
 
     Arguments:
-      predictions, np array, shape is either (N) or (N, batch_size) -
+      predictions, np array, shape is either (N) or (batch_size, N) -
         classifier output
       target_index: np array of int, shape is (1) or (batch_size) -
         index of the true class for given sample(s)
@@ -73,6 +73,7 @@ class ReLULayer:
           with respect to input
         """
         # TODO: Implement backward pass
+        # Your final implementation shouldn't have any loops
         raise Exception("Not implemented!")
         return d_result
 
@@ -89,6 +90,7 @@ class FullyConnectedLayer:
 
     def forward(self, X):
         # TODO: Implement forward pass
+        # Your final implementation shouldn't have any loops
         raise Exception("Not implemented!")
 
     def backward(self, d_out):

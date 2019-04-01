@@ -14,6 +14,7 @@ def softmax(predictions):
         probability for every class, 0..1
     '''
     # TODO implement softmax
+    # Your final implementation shouldn't have any loops
     raise Exception("Not implemented!")
 
 
@@ -31,6 +32,7 @@ def cross_entropy_loss(probs, target_index):
       loss: single value
     '''
     # TODO implement cross-entropy
+    # Your final implementation shouldn't have any loops
     raise Exception("Not implemented!")
 
 
@@ -50,6 +52,7 @@ def softmax_with_cross_entropy(predictions, target_index):
       dprediction, np array same shape as predictions - gradient of predictions by loss value
     '''
     # TODO implement softmax with cross-entropy
+    # Your final implementation shouldn't have any loops
     raise Exception("Not implemented!")
 
     return loss, dprediction
@@ -69,6 +72,7 @@ def l2_regularization(W, reg_strength):
     '''
 
     # TODO: implement l2 regularization and gradient
+    # Your final implementation shouldn't have any loops
     raise Exception("Not implemented!")
 
     return loss, grad
@@ -91,6 +95,7 @@ def linear_softmax(X, W, target_index):
     predictions = np.dot(X, W)
 
     # TODO implement prediction and gradient over W
+    # Your final implementation shouldn't have any loops
     raise Exception("Not implemented!")
     
     return loss, dW
@@ -152,6 +157,7 @@ class LinearSoftmaxClassifier():
         y_pred = np.zeros(X.shape[0], dtype=np.int)
 
         # TODO Implement class prediction
+        # Your final implementation shouldn't have any loops
         raise Exception("Not implemented!")
 
         return y_pred

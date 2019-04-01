@@ -6,17 +6,19 @@ from layers import FullyConnectedLayer, ReLULayer, softmax_with_cross_entropy, l
 class TwoLayerNet:
     """ Neural network with two fully connected layers """
 
-    def __init__(self, hidden_layer_size, reg):
+    def __init__(self, n_input, n_output, hidden_layer_size, reg):
         """
         Initializes the neural network
 
         Arguments:
+        n_input, int - dimension of the model input
+        n_output, int - number of classes to predict
         hidden_layer_size, int - number of neurons in the hidden layer
         reg, float - L2 regularization strength
         """
         self.reg = reg
         # TODO Create necessary layers
-        raise Exception("Not implemented!")
+        raise Exception("Not implemented!)"
 
     def compute_loss_and_gradients(self, X, y):
         """
@@ -27,11 +29,17 @@ class TwoLayerNet:
         X, np array (batch_size, input_features) - input data
         y, np array of int (batch_size) - classes
         """
+        # Before running forward and backward pass through the model,
+        # clear parameter gradients aggregated from the previous pass
+        # TODO Set parameter gradient to zeros
+        # Hint: using self.params() might be useful!
+        raise Exception("Not implemented!")
+        
         # TODO Compute loss and fill param gradients
         # by running forward and backward passes through the model
 
         # After that, implement l2 regularization on all params
-        # Hint: use self.params()
+        # Hint: self.params() is useful again!
         raise Exception("Not implemented!")
 
         return loss
