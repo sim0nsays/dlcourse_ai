@@ -15,12 +15,13 @@ class ConvNet:
     Conv[3x3] -> Relu -> MaxPool[4x4] ->
     Flatten -> FC -> Softmax
     """
-    def __init__(self, n_input_channels, n_output_classes, conv1_channels, conv2_channels):
+    def __init__(self, input_shape, n_output_classes, conv1_channels, conv2_channels):
         """
         Initializes the neural network
 
         Arguments:
-        n_input_channels, int - number of input channels
+        input_shape, tuple of 3 ints - image_width, image_height, n_channels
+                                         Will be equal to (32, 32, 3)
         n_output_classes, int - number of classes to predict
         conv1_channels, int - number of filters in the 1st conv layer
         conv2_channels, int - number of filters in the 2nd conv layer
