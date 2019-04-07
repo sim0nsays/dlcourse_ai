@@ -12,7 +12,7 @@ class KNN:
         self.train_X = X
         self.train_y = y
 
-    def predict(self, X, num_loops=0):
+    def predict(self, X, num_loops=1):
         '''
         Uses the KNN model to predict clases for the data samples provided
         
@@ -54,8 +54,11 @@ class KNN:
         dists = np.zeros((num_test, num_train), np.float32)
         for i_test in range(num_test):
             for i_train in range(num_train):
-                # TODO: Fill dists[i_test][i_train]
+                #dists[i_test, i_train] = np.sum(np.abs(self.train_X[i_train] - X[i_test]))
+                dists[i_test, i_train] = np.linalg.norm(self.train_X[i_train] - X[i_test], 1)
                 pass
+            
+        return dists
 
     def compute_distances_one_loop(self, X):
         '''
@@ -72,10 +75,15 @@ class KNN:
         num_train = self.train_X.shape[0]
         num_test = X.shape[0]
         dists = np.zeros((num_test, num_train), np.float32)
+        
         for i_test in range(num_test):
             # TODO: Fill the whole row of dists[i_test]
             # without additional loops or list comprehensions
+            # dists[i_test] =  np.sum(np.abs(X[i_test]-self.train_X))
+            dists[i_test] = np.linalg.norm(self.train_X - X[i_test], 1, axis = 1)
             pass
+        
+        return dists
 
     def compute_distances_no_loops(self, X):
         '''
@@ -92,9 +100,11 @@ class KNN:
         num_train = self.train_X.shape[0]
         num_test = X.shape[0]
         # Using float32 to to save memory - the default is float64
-        dists = np.zeros((num_test, num_train), np.float32)
+        # dists = np.zeros((num_test, num_train), np.float32)
+        dists = np.linalg.norm(self.train_X.reshape(1,num_train,-1) - X.reshape(num_test,1,-1) ,1 ,axis = 2)
+        return dists
         # TODO: Implement computing all distances with no loops!
-        pass
+        #pass
 
     def predict_labels_binary(self, dists):
         '''
@@ -110,10 +120,22 @@ class KNN:
         '''
         num_test = dists.shape[0]
         pred = np.zeros(num_test, np.bool)
+
+
         for i in range(num_test):
-            # TODO: Implement choosing best class based on k
-            # nearest training samples
+            indexes_of_the_best = np.argpartition(dists[i], self.k-1)[:self.k] 
+            num_true = np.sum(self.train_y[indexes_of_the_best])
+            num_false = self.k - num_true
+            if num_false > num_true:
+                pred[i] = False
+            else:
+                pred[i] = True
             pass
+        
+        t = 9
+        #print(self.train_y[np.argpartition(dists[t], self.k-1)[:self.k]])
+        #print(dists[t,np.argpartition(dists[t], self.k-1)[:self.k]])
+        #print(pred[t])
         return pred
 
     def predict_labels_multiclass(self, dists):
@@ -130,9 +152,17 @@ class KNN:
         '''
         num_test = dists.shape[0]
         num_test = dists.shape[0]
+        neibors = np.zeros(self.k, dtype = int)
         pred = np.zeros(num_test, np.int)
         for i in range(num_test):
-            # TODO: Implement choosing best class based on k
+            indexes_of_the_best = np.argpartition(dists[i], self.k-1)[:self.k] 
+            neibors = self.train_y[indexes_of_the_best]
+            pred[i] = np.bincount(neibors).argmax()
+            
+           # if i in [7,13, 18]:
+                #print(indexes_of_the_best)
+                #print(neibors)
+                #print(pred[i])
             # nearest training samples
             pass
         return pred
