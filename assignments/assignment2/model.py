@@ -18,7 +18,7 @@ class TwoLayerNet:
         """
         self.reg = reg
         # TODO Create necessary layers
-        raise Exception("Not implemented!)"
+        raise Exception("Not implemented!")
 
     def compute_loss_and_gradients(self, X, y):
         """
@@ -37,7 +37,7 @@ class TwoLayerNet:
         
         # TODO Compute loss and fill param gradients
         # by running forward and backward passes through the model
-
+        
         # After that, implement l2 regularization on all params
         # Hint: self.params() is useful again!
         raise Exception("Not implemented!")
