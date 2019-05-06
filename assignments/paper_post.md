@@ -26,6 +26,7 @@
 - [DenseNet](https://arxiv.org/abs/1608.06993) - развитие базовой архитектуры CNN после ResNet
 - [Learning from Simulated and Unsupervised Images through Adversarial Training](https://arxiv.org/abs/1612.07828) - использование GANs для генерации примеров для тренировки
 - [OpenAI GPT-2](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) - одна из последних архитектур для обучения языковых моделей
+- [Transformer-XL](https://arxiv.org/abs/1901.02860) - развитие архитектуры Transformer
 - [TacoTron2](https://arxiv.org/abs/1712.05884) - архитектура для синтеза речи
 
 ## Что значит описать?
