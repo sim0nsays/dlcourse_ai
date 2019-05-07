@@ -10,7 +10,7 @@
 
 - Дойти до ссылок на научные статьи из новостей про последние достижения AI, которые и так [прут](https://www.wired.com/story/comedian-machine-ai-learning-puns/) со [всех](https://venturebeat.com/2019/03/18/nvidia-researchers-debut-gaugan-ai-that-creates-fake-landscapes-that-look-real/) [щелей](https://www.technologyreview.com/s/613430/this-ai-generated-musak-shows-us-the-limit-of-artificial-creativity/).
 - Прочитать в деталях одну из статей, упомянутых в лекциях курса (в слайдах всегда есть ссылки!)
-- Посмотреть что является последним достижением (по-английски - State of the Art или SOTA) в какой-то конкретной задаче. Хороший ресурс, отслеживающий SOTA в большом классе задач - [http://paperswithdode.com](http://paperswithdode.com). Как пример можно посмотреть на:
+- Посмотреть что является последним достижением (по-английски - State of the Art или SOTA) в какой-то конкретной задаче. Хороший ресурс, отслеживающий SOTA в большом классе задач - [http://paperswithсode.com](http://paperswithсode.com). Как пример можно посмотреть на:
   - [Semantic Segmentation](https://paperswithcode.com/task/semantic-segmentation
 )
   - [Question Answering](https://paperswithcode.com/task/question-answering)
