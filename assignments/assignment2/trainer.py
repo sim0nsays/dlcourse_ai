@@ -26,7 +26,7 @@ class Trainer:
     def __init__(self, model, dataset, optim,
                  num_epochs=20,
                  batch_size=20,
-                 learning_rate=1e-3,
+                 learning_rate=1e-2,
                  learning_rate_decay=1.0):
         """
         Initializes the trainer
