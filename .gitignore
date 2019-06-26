@@ -1,1 +1,4 @@
 .DS_Store
+.ipynb_checkpoints
+__pycache__
+assignments/assignment1/data/
