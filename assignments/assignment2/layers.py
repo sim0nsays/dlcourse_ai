@@ -18,7 +18,7 @@ def l2_regularization(W, reg_strength):
     return loss, grad
 
 
-def softmax_with_cross_entropy(preds, target_index):
+def softmax_with_cross_entropy(predictions, target_index):
     """
     Computes softmax and cross-entropy loss for model predictions,
     including the gradient
@@ -36,7 +36,7 @@ def softmax_with_cross_entropy(preds, target_index):
     # TODO: Copy from the previous assignment
     raise Exception("Not implemented!")
 
-    return loss, d_preds
+    return loss, dprediction
 
 
 class Param:
@@ -117,7 +117,7 @@ class FullyConnectedLayer:
 
         raise Exception("Not implemented!")
 
-        return d_input
+        return d_result
 
     def params(self):
         return {'W': self.W, 'B': self.B}
