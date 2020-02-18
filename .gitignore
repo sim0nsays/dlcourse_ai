@@ -1,1 +1,5 @@
 .DS_Store
+.idea
+assignments/*/.ipynb_checkpoints
+assignments/*/__pycache__/
+assignments/*/data
