@@ -16,7 +16,12 @@ def softmax(predictions):
     # divide max value from all predictions to prevent float out of range
     predictions -= np.max(predictions)
     pred_exp = np.exp(predictions)
-    return pred_exp / np.sum(pred_exp, axis=1, keepdims=True)
+
+    if len(predictions.shape) > 1:
+        res = pred_exp / np.sum(pred_exp, axis=1, keepdims=True)
+    else:
+        res = pred_exp / np.sum(pred_exp)
+    return res
 
 
 def cross_entropy_loss(probs, target_index):
@@ -33,7 +38,11 @@ def cross_entropy_loss(probs, target_index):
       loss: single value
     '''
     # cross-entropy loss
-    return -np.log(probs[np.arange(len(probs)), target_index])
+    if type(target_index) is np.ndarray:
+        res = - np.log(probs[np.arange(len(probs)), target_index])
+    else:
+        res = - np.log(probs[target_index])
+    return res.mean()
 
 
 def softmax_with_cross_entropy(predictions, target_index):
@@ -53,15 +62,17 @@ def softmax_with_cross_entropy(predictions, target_index):
     '''
     # Your final implementation shouldn't have any loops
     predictions = predictions.copy()
-
     probs = softmax(predictions)
-    loss = cross_entropy_loss(probs, target_index).mean()
+    loss = cross_entropy_loss(probs, target_index)
 
     mask = np.zeros_like(predictions)
-    mask[np.arange(len(mask)), target_index] = 1
-    dprediction = -(mask - softmax(predictions) / mask.shape[0])
-
-    return loss, dprediction
+    if type(target_index) is np.ndarray:
+        mask[np.arange(len(probs)), target_index] = 1
+        d_preds = - (mask - softmax(predictions)) / mask.shape[0]
+    else:
+        mask[target_index] = 1
+        d_preds = - (mask - softmax(predictions))
+    return loss, d_preds
 
 
 def l2_regularization(W, reg_strength):
@@ -77,10 +88,8 @@ def l2_regularization(W, reg_strength):
       gradient, np.array same shape as W - gradient of weight by l2 loss
     '''
 
-    # TODO: implement l2 regularization and gradient
-    # Your final implementation shouldn't have any loops
-    raise Exception("Not implemented!")
-
+    loss = np.sum(W**2) * reg_strength
+    grad = 2 * W * reg_strength
     return loss, grad
     
 
@@ -99,11 +108,8 @@ def linear_softmax(X, W, target_index):
 
     '''
     predictions = np.dot(X, W)
-
-    # TODO implement prediction and gradient over W
-    # Your final implementation shouldn't have any loops
-    raise Exception("Not implemented!")
-    
+    loss, dprediction = softmax_with_cross_entropy(predictions, target_index)
+    dW = np.dot(X.T, dprediction)
     return loss, dW
 
 
