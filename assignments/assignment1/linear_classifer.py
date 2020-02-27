@@ -107,7 +107,9 @@ def linear_softmax(X, W, target_index):
       gradient, np.array same shape as W - gradient of weight by loss
 
     '''
+    print(X.shape, W.shape)
     predictions = np.dot(X, W)
+    print(predictions.shape)
     loss, dprediction = softmax_with_cross_entropy(predictions, target_index)
     dW = np.dot(X.T, dprediction)
     return loss, dW
@@ -118,7 +120,7 @@ class LinearSoftmaxClassifier:
         self.W = None
 
     def fit(self, X, y, batch_size=100, learning_rate=1e-7, reg=1e-5,
-            epochs=1):
+            epochs=1, verbose=True, get_random_batch=True):
         '''
         Trains linear classifier
         
@@ -144,15 +146,25 @@ class LinearSoftmaxClassifier:
             sections = np.arange(batch_size, num_train, batch_size)
             batches_indices = np.array_split(shuffled_indices, sections)
 
-            # TODO implement generating batches from indices
+            # implement generating batches from indices
             # Compute loss and gradients
             # Apply gradient to weights using learning rate
             # Don't forget to add both cross-entropy loss
             # and regularization!
-            raise Exception("Not implemented!")
+            # randomly get batch number
+            batch_num = np.random.randint(len(batches_indices))
+            X_batches = X[batches_indices[batch_num]]
+            target_index = y[batches_indices[batch_num]]
+            loss, dW = linear_softmax(X_batches, self.W, target_index)
+            l2_loss, l2_dW = l2_regularization(self.W, reg_strength=reg)
+            loss += l2_loss
+            loss_history.append(loss)
 
-            # end
-            print("Epoch %i, loss: %f" % (epoch, loss))
+            dW += l2_dW
+            self.W -= learning_rate * dW
+
+            if verbose and (epoch == 0 or epoch == epochs - 1):
+                print("Epoch %i, loss: %f" % (epoch, loss))
 
         return loss_history
 
@@ -166,10 +178,9 @@ class LinearSoftmaxClassifier:
         Returns:
           y_pred, np.array of int (test_samples)
         '''
-        y_pred = np.zeros(X.shape[0], dtype=np.int)
-
-        # TODO Implement class prediction
         # Your final implementation shouldn't have any loops
-        raise Exception("Not implemented!")
+        predictions = np.dot(X, self.W)
+        probs = softmax(predictions)
+        y_pred = np.argmax(probs, axis=1)
 
         return y_pred
