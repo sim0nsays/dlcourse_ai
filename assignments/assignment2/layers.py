@@ -106,13 +106,14 @@ class Param:
 
 class ReLULayer:
     def __init__(self):
-        pass
+        self.X = None
 
     def forward(self, X):
-        # TODO: Implement forward pass
         # Hint: you'll need to save some information about X
         # to use it later in the backward pass
-        raise Exception("Not implemented!")
+        res = np.maximum(X, 0)
+        self.X = X
+        return res
 
     def backward(self, d_out):
         """
@@ -126,9 +127,8 @@ class ReLULayer:
         d_result: np array (batch_size, num_features) - gradient
           with respect to input
         """
-        # TODO: Implement backward pass
         # Your final implementation shouldn't have any loops
-        raise Exception("Not implemented!")
+        d_result = (self.X > 0) * d_out
         return d_result
 
     def params(self):
@@ -143,9 +143,11 @@ class FullyConnectedLayer:
         self.X = None
 
     def forward(self, X):
-        # TODO: Implement forward pass
         # Your final implementation shouldn't have any loops
-        raise Exception("Not implemented!")
+        W, B = self.W.value, self.B.value
+        self.X = Param(X)
+        out = np.dot(X, W) + B
+        return out
 
     def backward(self, d_out):
         """
@@ -161,17 +163,20 @@ class FullyConnectedLayer:
         d_result: np array (batch_size, n_input) - gradient
           with respect to input
         """
-        # TODO: Implement backward pass
         # Compute both gradient with respect to input
         # and gradients with respect to W and B
         # Add gradients of W and B to their `grad` attribute
 
         # It should be pretty similar to linear classifier from
         # the previous assignment
+        X, W = self.X.value, self.W.value
+        dW, dX = np.dot(X.T, d_out), np.dot(d_out, W.T)
+        dB = np.dot(np.ones((X.shape[0], 1)).T, d_out)
 
-        raise Exception("Not implemented!")
+        self.W.grad += dW
+        self.B.grad += dB
 
-        return d_input
+        return dX
 
     def params(self):
         return {'W': self.W, 'B': self.B}

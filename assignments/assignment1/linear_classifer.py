@@ -107,9 +107,7 @@ def linear_softmax(X, W, target_index):
       gradient, np.array same shape as W - gradient of weight by loss
 
     '''
-    print(X.shape, W.shape)
     predictions = np.dot(X, W)
-    print(predictions.shape)
     loss, dprediction = softmax_with_cross_entropy(predictions, target_index)
     dW = np.dot(X.T, dprediction)
     return loss, dW
