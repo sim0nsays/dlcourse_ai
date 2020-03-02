@@ -89,7 +89,7 @@ class TwoLayerNet:
         relu_out = self.relu.forward(out1)
         predictions = self.linear2.forward(relu_out)
         probs = softmax(predictions)
-        pred = np.argsort(probs, axis=1)
+        pred = np.argmax(probs, axis=1)
         return pred
 
     def params(self):
