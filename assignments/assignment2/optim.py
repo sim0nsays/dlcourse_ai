@@ -1,6 +1,3 @@
-import numpy as np
-
-
 class SGD:
     """
     Implements vanilla SGD update
@@ -25,7 +22,7 @@ class MomentumSGD:
     Implements Momentum SGD update
     """
     def __init__(self, momentum=0.9):
-        self.momentum = 0.9
+        self.momentum = momentum
         self.velocity = 0
     
     def update(self, w, d_w, learning_rate):
@@ -40,7 +37,7 @@ class MomentumSGD:
         Returns:
         updated_weights, np array same shape as w
         """
-        # TODO Implement momentum update
+        # Implement momentum update
         # Hint: you'll need to introduce some variables to remember
         # velocity from the previous updates
         self.velocity = self.momentum * self.velocity - learning_rate * d_w

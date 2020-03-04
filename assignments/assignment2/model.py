@@ -1,3 +1,4 @@
+import sys
 import numpy as np
 
 from layers import FullyConnectedLayer, ReLULayer, softmax_with_cross_entropy, l2_regularization, softmax
@@ -22,6 +23,9 @@ class TwoLayerNet:
         self.relu = ReLULayer()
         self.linear2 = FullyConnectedLayer(hidden_layer_size, n_output)
 
+    def has_nan(self, arr: np.ndarray) -> bool:
+        return np.sum(np.isnan(arr)) > 0
+
     def compute_loss_and_gradients(self, X, y):
         """
         Computes total loss and updates parameter gradients
@@ -41,14 +45,18 @@ class TwoLayerNet:
         W2, B2 = params['W2'], params['B2']
 
         # clean gradients
-        W1.grad, B1.grad = np.zeros_like(W1.value), np.zeros_like(B1.value)
-        W2.grad, B2.grad = np.zeros_like(W2.value), np.zeros_like(B2.value)
-        
+        W1.grad = np.zeros_like(W1.value)
+        B1.grad = np.zeros_like(B1.value)
+        W2.grad = np.zeros_like(W2.value)
+        B2.grad = np.zeros_like(B2.value)
+
         # Compute loss and fill param gradients
         # by running forward and backward passes through the model
+
         out1 = self.linear1.forward(X)
         relu_out = self.relu.forward(out1)
         out2 = self.linear2.forward(relu_out)
+
         loss, d_preds = softmax_with_cross_entropy(out2, y)
 
         d_out2 = self.linear2.backward(d_preds)
@@ -89,8 +97,8 @@ class TwoLayerNet:
         relu_out = self.relu.forward(out1)
         predictions = self.linear2.forward(relu_out)
         probs = softmax(predictions)
-        pred = np.argmax(probs, axis=1)
-        return pred
+        y_pred = np.argmax(probs, axis=1)
+        return y_pred
 
     def params(self):
         linear1_params, linear2_params = self.linear1.params(), self.linear2.params()
