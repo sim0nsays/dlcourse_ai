@@ -23,9 +23,6 @@ class TwoLayerNet:
         self.relu = ReLULayer()
         self.linear2 = FullyConnectedLayer(hidden_layer_size, n_output)
 
-    def has_nan(self, arr: np.ndarray) -> bool:
-        return np.sum(np.isnan(arr)) > 0
-
     def compute_loss_and_gradients(self, X, y):
         """
         Computes total loss and updates parameter gradients
